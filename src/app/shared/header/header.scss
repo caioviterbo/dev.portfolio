@@ -1,0 +1,22 @@
+header.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid red;
+
+    div.info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  div.status {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+
+
+
