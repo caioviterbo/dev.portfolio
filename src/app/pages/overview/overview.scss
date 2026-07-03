@@ -1,8 +1,130 @@
-div.highlights-section {
+.overview-shell {
+  animation: fade-in 0.4s ease-out both;
+  padding: 1.35rem 1.6rem 1.8rem;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 1.35rem;
+}
 
-  .highlights-card {
-    border: 1px solid red;
+.hero {
+  max-width: 760px;
+}
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  color: hsl(var(--muted-foreground));
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 2.8vw, 3.2rem);
+  line-height: 1.04;
+  font-weight: 600;
+}
+
+.hero h1 span {
+  display: block;
+  color: hsl(var(--primary));
+}
+
+.hero-copy {
+  margin-top: 0.85rem;
+  max-width: 660px;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.65;
+  font-size: 0.92rem;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.metric-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-height: 125px;
+  min-width: 0;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  border-color: hsla(var(--primary), 0.3);
+  box-shadow: 0 0 20px hsla(var(--primary), 0.05);
+}
+
+
+.icon {
+  color: hsl(var(--primary));
+  font-size: 1.5rem;
+}
+
+.metric-value {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+
+.metric-label {
+  margin: 0;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.95rem;
+}
+
+.actions-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.72rem 1.05rem;
+  border-radius: 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.86rem;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.primary-button {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+.secondary-button {
+  background: transparent;
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--border));
+}
+
+@media (max-width: 960px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .overview-shell {
+    padding: 1.25rem 1rem 1.5rem;
+  }
+  .metrics-grid {
+    grid-template-columns: 1fr;
   }
 }

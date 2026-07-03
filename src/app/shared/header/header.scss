@@ -1,20 +1,85 @@
-header.header {
+.header {
+  height: 56px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border: 1px solid red;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 1.5rem;
+  background: hsla(var(--card), 0.95);
+  border-bottom: 1px solid hsl(var(--border));
+  backdrop-filter: blur(18px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
 
-    div.info {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
-  div.status {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-  }
+.menu-button {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 0.85rem;
+  background: hsl(var(--secondary));
+  color: hsl(var(--primary));
+  cursor: pointer;
+}
+
+.header-title {
+  display: flex;
+  gap: 1.15rem;
+}
+
+.header-title p {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.header-status {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: hsl(var(--primary));
+  font-size: 0.76rem;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.76rem;
+}
+
+.header-right span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.header-right span:not(:last-child)::after {
+  content: '|';
+  margin-left: 0.8rem;
+  color: hsl(var(--border));
+}
+
+.status-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: hsl(var(--primary));
+  animation: pulse 1.8s infinite;
 }
 
 

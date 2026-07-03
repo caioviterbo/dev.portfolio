@@ -1,7 +1,76 @@
-div.sidebar {
-  border: 1px solid red;
-  height: 1000px;
-
+.sidebar {
+  min-height: 100vh;
+  width: 208px;
+  padding: 1.25rem 1rem 1.25rem;
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
+  background: hsl(var(--sidebar-background));
+  color: hsl(var(--sidebar-foreground));
+  border-right: 1px solid hsl(var(--sidebar-border));
+  position: sticky;
+  top: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-title {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.brand-subtitle {
+  margin: 0.2rem 0 0;
+  color: hsl(var(--sidebar-foreground));
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 0.9rem;
+  border-radius: 0.95rem;
+  color: hsl(var(--sidebar-foreground));
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background: hsl(var(--secondary));
+  color: hsl(var(--primary));
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: hsl(var(--primary));
+  animation: pulse 1.8s infinite;
 }
