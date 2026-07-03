@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "caioviterbo-portifolio-frontend": {
+    "caioviterbo-portfolio-frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -63,10 +63,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "caioviterbo-portifolio-frontend:build:production"
+              "buildTarget": "caioviterbo-portfolio-frontendbuild:production"
             },
             "development": {
-              "buildTarget": "caioviterbo-portifolio-frontend:build:development"
+              "buildTarget": "caioviterbo-portfolio-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
