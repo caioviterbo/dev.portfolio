@@ -1,30 +1,38 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Header } from "../../shared/header/header";
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-overview',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './overview.html',
-  styleUrl: './overview.scss',
+  styleUrls: ['./overview.scss'],
 })
 export class Overview {
+  cards = [
+    {
+      id: 'layers',
+      label: '2 Anos',
+      description: 'Experiência Profissional',
+      icon: 'layers',
 
-  cards: any[] = [
-    {
-      icon: 'code',
-      title: 'Java . Angular . Spring Boot',
-      description: 'Here are some of the projects I have worked on. Each project reflects my commitment to building scalable and efficient systems.',
     },
     {
-      icon: 'code',
-      title: 'Java . Angular . Spring Boot',
+      id: 'code',
+      label: 'Java · Spring Boot · Angular',
       description: 'Core Stack',
+      icon: 'code',
     },
     {
-      icon: 'code',
-      title: 'Java . Angular . Spring Boot',
-      description: 'Here are some of the projects I have worked on. Each project reflects my commitment to building scalable and efficient systems.',
-    }
-  ]
+      id: 'server',
+      label: 'Backend e Sistemas',
+      description: 'Foco',
+      icon: 'storage',
+    },
+    {
+      id: 'brain',
+      label: 'Docker · Kubernetes',
+      description: 'Estudando',
+      icon: 'memory',
+    },
+  ];
 }

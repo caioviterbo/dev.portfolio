@@ -1,0 +1,103 @@
+.contact-shell {
+  animation: fade-in 0.4s ease-out both;
+  padding: 1.35rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.hero .eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  color: hsl(var(--muted-foreground));
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 2.8vw, 2.3rem);
+}
+
+.hero-copy {
+  margin-top: 0.6rem;
+  max-width: 660px;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.6;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.95rem 0.9rem;
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  min-width: 0;
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.contact-card:hover {
+  border-color: hsla(var(--primary), 0.35);
+  transform: translateY(-1px);
+  background: hsl(var(--surface-hover));
+}
+
+.contact-icon {
+  width: 2.7rem;
+  height: 2.7rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.95rem;
+  background: hsl(var(--secondary));
+  color: hsl(var(--primary));
+}
+
+.contact-icon .material-symbols-outlined {
+  font-size: 1.35rem;
+}
+
+.contact-label {
+  margin: 0 0 0.35rem;
+  font-weight: 600;
+}
+
+.contact-value {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  color: hsl(var(--muted-foreground));
+}
+
+.contact-footer {
+  padding: 0.75rem 0.9rem;
+  border: 1px dashed hsl(var(--border));
+  border-radius: var(--radius);
+  color: hsl(var(--muted-foreground));
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.86rem;
+}
+
+.terminal-symbol {
+  color: hsl(var(--primary));
+  margin-right: 0.55rem;
+}
+
+@media (max-width: 960px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-shell {
+    padding: 1.25rem 1rem;
+  }
+}

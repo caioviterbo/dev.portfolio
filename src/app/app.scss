@@ -1,4 +1,18 @@
 div.main-layout {
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 224px 1fr;
+  background: hsl(var(--background));
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 960px) {
+  div.main-layout {
+    grid-template-columns: 72px 1fr;
+  }
 }

@@ -1,0 +1,213 @@
+.projects-shell {
+  animation: fade-in 0.4s ease-out both;
+  padding: 1.35rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.page-header .eyebrow {
+  margin: 0 0 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  color: hsl(var(--muted-foreground));
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 2.8vw, 2.3rem);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-width: 0;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  border-color: hsla(var(--primary), 0.25);
+  box-shadow: 0 0 20px hsla(var(--primary), 0.05);
+  transform: translateY(-1px);
+}
+
+.project-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 0.25rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.4rem;
+  padding: 0.38rem;
+  border-radius: 999px;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  color: hsl(var(--foreground));
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: inset 0 1px 0 hsla(255, 255, 255, 0.04);
+}
+
+.github-link:hover {
+  transform: translateY(-1px);
+  border-color: hsla(var(--primary), 0.35);
+  background: hsla(var(--primary), 0.08);
+  box-shadow: 0 6px 16px hsla(var(--primary), 0.12);
+}
+
+.github-link .icon {
+  display: block;
+  width: 0.95rem;
+  height: 0.95rem;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.project-problem {
+  margin: 0;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.5;
+  font-size: 0.92rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem;
+  padding: 0.38rem 0.65rem;
+  border-radius: 999px;
+  background: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+}
+
+.project-feature {
+  margin: 0;
+  font-family: 'JetBrains Mono', monospace;
+  color: hsl(var(--primary));
+  font-size: 0.95rem;
+}
+
+.project-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.detail-card {
+  background: hsl(var(--surface));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 0.9rem;
+  min-width: 0;
+}
+
+.detail-label {
+  margin: 0 0 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: hsl(var(--primary));
+}
+
+.detail-card p:last-child {
+  margin: 0;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.75;
+}
+
+.architecture-card {
+  margin-top: 0.8rem;
+  border: 1px dashed hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 0.9rem;
+  min-height: 110px;
+}
+
+.arch-nodes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.arch-node {
+  flex: 1 1 100px;
+  padding: 0.85rem 1rem;
+  border-radius: 0.85rem;
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  text-align: center;
+  font-weight: 600;
+}
+
+.arch-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  color: hsl(var(--muted-foreground));
+  font-size: 1.2rem;
+}
+
+.project-actions {
+  margin-top: 0.8rem;
+}
+
+.ghost-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.8rem;
+  border: 1px solid hsl(var(--border));
+  color: hsl(var(--foreground));
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.ghost-button:hover {
+  border-color: hsla(var(--primary), 0.35);
+  color: hsl(var(--primary));
+  background: hsla(var(--primary), 0.05);
+}
+
+@media (max-width: 960px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-shell {
+    padding: 1.25rem 1rem;
+  }
+}

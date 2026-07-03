@@ -1,15 +1,31 @@
 <div class="sidebar">
-  <div [routerLink]="['/inicio']">
-    <p>Inicio</p>
+  <div class="brand">
+    <span class="material-symbols-outlined">terminal</span>
+    <div>
+      <p class="brand-title">dev.portfolio</p>
+    </div>
   </div>
-  <div [routerLink]="['/projetos']">
-    <p >Projetos</p>
-  </div>
-  <div [routerLink]="['/sobre']">
-    <p>Sobre</p>
-  </div>
-  <div [routerLink]="['/contato']">
-    <p>Contato</p>
+  <nav class="nav-list">
+    <a routerLink="/inicio" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-item">
+      <span class="material-symbols-outlined">dashboard</span>
+      <span>Inicio</span>
+    </a>
+    <a routerLink="/projetos" routerLinkActive="active" class="nav-item">
+      <span class="material-symbols-outlined">folder</span>
+      <span>Projetos</span>
+    </a>
+    <a routerLink="/sobre" routerLinkActive="active" class="nav-item">
+      <span class="material-symbols-outlined">person</span>
+      <span>Sobre</span>
+    </a>
+    <a routerLink="/contato" routerLinkActive="active" class="nav-item">
+      <span class="material-symbols-outlined">mail</span>
+      <span>Contato</span>
+    </a>
+  </nav>
+  <div class="sidebar-footer">
+    <span class="status-dot"></span>
+    <span>System Online</span>
   </div>
 </div>
 

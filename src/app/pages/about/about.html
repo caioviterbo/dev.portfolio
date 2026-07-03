@@ -1,0 +1,19 @@
+<section class="about-shell">
+  <div class="hero">
+    <p class="eyebrow">// Sobre</p>
+    <h1>Como eu penso</h1>
+    <p class="hero-copy">
+     Acredito que software de qualidade nasce de boas decisões,
+     não apenas de boas implementações. 
+    </p>
+  </div>
+
+  <div class="about-grid">
+    @for (card of about; track card.id) {
+      <article class="about-card">
+        <p class="card-title">{{ card.title }}</p>
+        <p class="card-copy">{{ card.description }}</p>
+      </article>
+    }
+  </div>
+</section>
