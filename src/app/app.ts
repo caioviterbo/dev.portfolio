@@ -10,5 +10,5 @@ import { Sidebar } from "./shared/sidebar/sidebar";
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('caioviterbo-portifolio-frontend');
+  protected readonly title = signal('caioviterbo-portfolio-frontend');
 }

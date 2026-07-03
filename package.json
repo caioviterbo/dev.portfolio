@@ -1,13 +1,13 @@
 {
-  "name": "caioviterbo-portifolio-frontend",
-  "version": "0.0.0",
+  "name": "caioviterbo-portfolio-frontend",
+  "version": "1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:caioviterbo-portifolio-frontend": "node dist/caioviterbo-portifolio-frontend/server/server.mjs"
+    "serve:ssr:caioviterbo-portfolio-frontend": "node dist/caioviterbo-portfolio-frontend/server/server.mjs"
   },
   "prettier": {
     "printWidth": 100,
