@@ -1,8 +1,20 @@
 div.main-layout {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 224px 1fr;
+  grid-template-columns: 1fr;
   background: hsl(var(--background));
+  transition: grid-template-columns 0.2s ease;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  div.main-layout {
+    grid-template-columns: 224px 1fr;
+  }
+
+  div.main-layout.sidebar-collapsed {
+    grid-template-columns: 80px 1fr;
+  }
 }
 
 main {
@@ -11,8 +23,11 @@ main {
   flex-direction: column;
 }
 
-@media (max-width: 960px) {
-  div.main-layout {
-    grid-template-columns: 72px 1fr;
-  }
+/* Backdrop for mobile drawer */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 15, 20, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 30;
 }

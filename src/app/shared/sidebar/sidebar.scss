@@ -10,6 +10,12 @@
   border-right: 1px solid hsl(var(--sidebar-border));
   position: sticky;
   top: 0;
+  transition: width 0.2s ease, padding 0.2s ease;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+  padding: 1.25rem 0.75rem;
 }
 
 .brand {
@@ -18,11 +24,26 @@
   gap: 0.75rem;
 }
 
+.sidebar.collapsed .brand {
+  justify-content: center;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
 .brand-title {
   margin: 0;
   font-family: 'JetBrains Mono', monospace;
   font-weight: 600;
   color: hsl(var(--foreground));
+}
+
+.sidebar.collapsed .brand-text,
+.sidebar.collapsed .nav-label,
+.sidebar.collapsed .footer-label {
+  display: none;
 }
 
 .brand-subtitle {
@@ -49,6 +70,11 @@
   transition: background 0.2s ease, color 0.2s ease;
 }
 
+.sidebar.collapsed .nav-item {
+  justify-content: center;
+  padding: 0.8rem;
+}
+
 .nav-item:hover,
 .nav-item.active {
   background: hsl(var(--secondary));
@@ -67,10 +93,65 @@
   letter-spacing: 0.08em;
 }
 
+.sidebar.collapsed .sidebar-footer {
+  justify-content: center;
+}
+
 .status-dot {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 999px;
   background: hsl(var(--primary));
   animation: pulse 1.8s infinite;
+}
+
+.close-button {
+  display: none;
+  border: none;
+  background: transparent;
+  color: hsl(var(--foreground));
+  cursor: pointer;
+  padding: 0.25rem;
+  margin-left: auto;
+}
+
+/* Mobile: drawer overlay behavior */
+@media (max-width: 767px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 256px;
+    transform: translateX(-100%);
+    z-index: 40;
+    border-right: none;
+    transition: transform 0.2s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+
+  .main-layout.mobile-sidebar-open .sidebar {
+    transform: translateX(0);
+  }
+
+  :host(.mobile-open) .sidebar {
+    transform: translateX(0);
+  }
+
+  .close-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sidebar.collapsed {
+    width: 256px;
+    padding-left: 1.25rem;
+  }
+
+  .sidebar.collapsed .brand-text,
+  .sidebar.collapsed .nav-label,
+  .sidebar.collapsed .footer-label {
+    display: block;
+  }
 }
