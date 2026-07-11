@@ -1,6 +1,6 @@
 .about-shell {
   animation: fade-in 0.4s ease-out both;
-  padding: 1.35rem 1.6rem;
+  padding: 1rem; /* mobile p-4 */
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -29,7 +29,7 @@
 
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr; /* mobile: 1 column */
   gap: 1.25rem;
 }
 
@@ -62,14 +62,11 @@
   line-height: 1.8;
 }
 
-@media (max-width: 960px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
+@media (min-width: 640px) {
+  .about-shell { padding: 1.5rem; }
 }
 
-@media (max-width: 640px) {
-  .about-shell {
-    padding: 1.25rem 1rem;
-  }
+@media (min-width: 768px) {
+  .about-shell { padding: 2rem; }
+  .about-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
